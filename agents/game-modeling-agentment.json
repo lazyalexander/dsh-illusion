@@ -1,0 +1,73 @@
+{
+  "schema": "dsh-illusion/agentment@1",
+  "purpose": "Role and handoff contract for reviewable game-asset modeling",
+  "roles": [
+    {
+      "id": "asset-director",
+      "pluginId": "illusion.coordinator",
+      "mutatesScene": false,
+      "responsibilities": [
+        "normalize the brief into category, archetype, usage, style, engine target, unit, and acceptance gates",
+        "choose interactive or Plan execution",
+        "select the next review target without inventing production evidence"
+      ],
+      "output": "asset-brief"
+    },
+    {
+      "id": "deepseek-modeler",
+      "pluginId": "illusion.deepseek-modeler",
+      "mutatesScene": true,
+      "responsibilities": [
+        "own modeling decisions and call illusion_build",
+        "publish one semantic node per tool call with stable IDs",
+        "apply revisions to the selected checkpoint and preserve history"
+      ],
+      "input": "asset-brief",
+      "output": "build-snapshot"
+    },
+    {
+      "id": "technical-validator",
+      "pluginId": "illusion.technical-validator",
+      "mutatesScene": false,
+      "responsibilities": [
+        "evaluate observable category and shared quality gates",
+        "separate pass, needs-revision, and not-observable findings",
+        "request a bounded correction instead of silently editing"
+      ],
+      "input": "build-snapshot",
+      "output": "validation-report"
+    },
+    {
+      "id": "export-coordinator",
+      "pluginId": "illusion.export-coordinator",
+      "mutatesScene": false,
+      "responsibilities": [
+        "export only after an explicit user action",
+        "bind exports to build ID and selected step",
+        "report format evidence without claiming engine import acceptance"
+      ],
+      "input": "accepted-checkpoint",
+      "output": "export-receipt"
+    }
+  ],
+  "handoffs": [
+    ["asset-director", "deepseek-modeler"],
+    ["deepseek-modeler", "technical-validator"],
+    ["technical-validator", "deepseek-modeler"],
+    ["technical-validator", "export-coordinator"]
+  ],
+  "invariants": [
+    "only deepseek-modeler mutates the scene",
+    "every mutation is visible through illusion_build",
+    "historical changes resume in a branch",
+    "validation does not create authority to export or publish",
+    "not-observable evidence is never upgraded to pass",
+    "one resolved capability has one provider",
+    "one mutable scope has one plugin owner"
+  ],
+  "governance": {
+    "apiVersion": 1,
+    "runtime": "single installable coordinator with governed capability plugins",
+    "documentation": "../docs/PLUGIN_GOVERNANCE.md"
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Illusion 2D Art"
+  short_description: "Direct reviewable 2D game-art production"
+  default_prompt: "Use $illusion-2d-art to define a style contract and production plan for this game-art request."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Illusion Game Assets"
+  short_description: "Build reviewable game-ready modular 3D assets"
+  default_prompt: "Use $illusion-game-assets to plan and build a reviewable game asset with DeepSeek and Illusion."

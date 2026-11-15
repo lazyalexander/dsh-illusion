@@ -1,0 +1,41 @@
+{
+  "schema": "dsh-illusion/game-asset-smoke@1",
+  "date": "2026-11-14",
+  "harness": "0.2.2-rc.1",
+  "model": "DeepSeek-V4.1-Flash",
+  "reasoningEffort": "high",
+  "durationSeconds": 173,
+  "results": [
+    { "category": "humanoid", "archetype": "stylized adventurer", "parts": 19, "joints": 12, "status": "complete" },
+    { "category": "creature", "archetype": "stylized red fox", "parts": 19, "joints": 8, "status": "complete" },
+    { "category": "building", "archetype": "two-story townhouse", "parts": 14, "joints": 0, "status": "complete" },
+    { "category": "vehicle", "archetype": "six-wheel utility rover", "parts": 15, "joints": 8, "status": "complete" },
+    { "category": "prop", "archetype": "reinforced treasure chest", "parts": 15, "joints": 2, "status": "complete" },
+    { "category": "vegetation", "archetype": "mountain pine cluster", "parts": 15, "joints": 0, "status": "complete" },
+    { "category": "terrain", "archetype": "modular coastal cliff", "parts": 13, "joints": 0, "status": "complete" },
+    { "category": "environment", "archetype": "small fantasy market square kit", "parts": 19, "joints": 0, "status": "complete" }
+  ],
+  "history": {
+    "gameAssetCards": 24,
+    "branchControls": 24,
+    "exportControls": 24,
+    "reviewPanels": 24,
+    "planControls": 24
+  },
+  "viewportStress": {
+    "failureObservedBeforeFix": "eager WebGL contexts produced blank historical previews",
+    "fix": "mount WebGL only within a 600px viewport margin",
+    "activeViewportsObservedAfterFix": 2,
+    "deferredViewportsObservedAfterFix": 22,
+    "visibleModelRecovered": true
+  },
+  "notObservable": [
+    "production topology and triangle budgets",
+    "UVs and texture maps",
+    "skin weights and deformation",
+    "runtime animation and physics",
+    "collision and navigation behavior",
+    "LOD switching",
+    "Godot import acceptance"
+  ]
+}

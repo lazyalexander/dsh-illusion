@@ -1,0 +1,18 @@
+{
+  "schema": "dsh-illusion/2d-dsh-demo@1",
+  "date": "2026-11-15",
+  "runtime": "DeepSeek Harness 0.2.2-rc.1",
+  "profile": "headless",
+  "provider": "llm-deepseek-api-key",
+  "artifact": "coastal-courier.svg",
+  "styleFamily": "pixel",
+  "requestedFrames": 1,
+  "status": "materialized-from-streamed-design",
+  "finalResponseReceived": false,
+  "termination": "The DSH run was stopped after the complete deterministic SVG layout had been emitted in its run stream but before a final response.",
+  "claims": {
+    "authoredThroughDsh": true,
+    "usedBuiltInImageGeneration": false,
+    "providerRasterGeneration": false
+  }
+}

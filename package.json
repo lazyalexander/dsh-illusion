@@ -1,0 +1,94 @@
+{
+  "name": "dsh-illusion",
+  "version": "0.5.0",
+  "description": "Reviewable 2D and 3D game-asset production for DeepSeek Harness",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lazyalexander/dsh-illusion.git"
+  },
+  "homepage": "https://github.com/lazyalexander/dsh-illusion#readme",
+  "bugs": {
+    "url": "https://github.com/lazyalexander/dsh-illusion/issues"
+  },
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "3d",
+    "2d-art",
+    "modeling",
+    "visualization"
+  ],
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.2-rc.1"
+  },
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-file-upload",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-tool",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  },
+  "files": [
+    "lib",
+    "!lib/*.map",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh-CN.md",
+    "CHANGELOG.md",
+    "CHANGELOG.zh-CN.md",
+    "PRIVACY.md",
+    "PRIVACY.zh-CN.md",
+    "agents",
+    "benchmarks",
+    "docs",
+    "examples",
+    "skills",
+    "THIRD_PARTY_NOTICES.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsdown && node scripts/normalize-built-client.mjs",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "check:assets": "node scripts/check-game-asset-catalog.mjs",
+    "audit:public": "node scripts/check-public-repo.mjs",
+    "check": "npm run typecheck && npm test && npm run check:assets && npm run audit:public && npm run build"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.1.0",
+    "react": ">=18.2.0"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "~4.1.0",
+    "@deepseek-ai/dsh-client-ui-slots": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-ui-tool": "0.2.2-rc.1",
+    "@types/node": "^22.10.0",
+    "@types/react": "^18.3.1",
+    "@types/three": "^0.181.0",
+    "react": "^18.3.1",
+    "three": "^0.181.1",
+    "tsdown": "^0.15.6",
+    "typescript": "^5.9.2",
+    "vitest": "^4.0.8"
+  }
+}

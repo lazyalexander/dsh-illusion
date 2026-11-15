@@ -1,0 +1,23 @@
+{
+  "schema": "dsh-illusion/2d-art-style-benchmark@1",
+  "cases": [
+    {
+      "id": "pixel-character-sheet",
+      "family": "pixel",
+      "deliverable": "sprite-sheet",
+      "required": ["canvas", "colorLimit", "pixelPerfect", "dithering", "slicing"]
+    },
+    {
+      "id": "anime-character-portrait",
+      "family": "anime",
+      "deliverable": "portrait",
+      "required": ["lineWeight", "celBands", "proportion", "author-approval"]
+    },
+    {
+      "id": "author-custom-background",
+      "family": "custom",
+      "deliverable": "background",
+      "required": ["invariants-or-references", "reference-rights", "author-approval"]
+    }
+  ]
+}

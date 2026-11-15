@@ -1,0 +1,54 @@
+{
+  "schema": "dsh-illusion/2d-art-agentment@1",
+  "purpose": "Role and handoff contract for reviewable 2D art production",
+  "roles": [
+    {
+      "id": "art-director",
+      "pluginId": "illusion.2d-art",
+      "responsibilities": [
+        "normalize the deliverable and production constraints",
+        "turn author intent into a proposed or accepted Style Contract",
+        "never accept an Illusion proposal without author confirmation"
+      ],
+      "output": "art-brief-and-style-contract"
+    },
+    {
+      "id": "image-provider",
+      "pluginId": null,
+      "status": "adapter-required",
+      "responsibilities": [
+        "generate or edit raster artifacts from an accepted contract",
+        "return artifact identity and observable generation metadata",
+        "avoid silently changing the accepted style contract"
+      ],
+      "output": "image-artifact-receipt"
+    },
+    {
+      "id": "art-validator",
+      "pluginId": "illusion.2d-validator",
+      "responsibilities": [
+        "check deterministic format and style-contract gates",
+        "separate structural pass from subjective author approval",
+        "request corrections without repainting"
+      ],
+      "output": "art-validation-report"
+    },
+    {
+      "id": "author",
+      "pluginId": null,
+      "responsibilities": [
+        "own style intent and reference authority",
+        "accept, revise, or reject style proposals and visual checkpoints",
+        "authorize final export"
+      ],
+      "output": "accepted-art-checkpoint"
+    }
+  ],
+  "invariants": [
+    "the author owns style intent",
+    "Illusion proposals require author confirmation",
+    "every generated or edited artifact is a new visible checkpoint",
+    "validation never becomes a hidden repainting channel",
+    "unknown reference rights are preserved as unknown"
+  ]
+}

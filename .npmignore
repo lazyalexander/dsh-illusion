@@ -1,0 +1,13 @@
+lib/*.map
+.env
+.env.*
+.npmrc
+*.key
+*.pem
+*.p12
+*.pfx
+.dsh/
+exports/
+artifacts/
+*.tgz
+.DS_Store

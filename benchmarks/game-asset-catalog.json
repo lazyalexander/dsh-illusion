@@ -1,0 +1,71 @@
+{
+  "schema": "dsh-illusion/game-asset-benchmark@1",
+  "cases": [
+    {
+      "id": "humanoid-adventurer",
+      "profile": { "kind": "game-asset", "category": "humanoid", "archetype": "stylized adventurer", "style": "stylized", "usage": "skeletal", "target": "godot", "unit": "m" },
+      "requiredPhases": ["silhouette", "structure", "rig", "validation"],
+      "acceptance": ["recognizable body proportions", "equipment clearance", "humanoid rest-joint hierarchy"]
+    },
+    {
+      "id": "creature-red-fox",
+      "profile": { "kind": "game-asset", "category": "creature", "archetype": "stylized red fox", "style": "stylized", "usage": "skeletal", "target": "godot", "unit": "m" },
+      "requiredPhases": ["silhouette", "anatomy", "rig", "validation"],
+      "acceptance": ["quadruped silhouette", "grounded paws", "tail and limb articulation plan"]
+    },
+    {
+      "id": "building-townhouse",
+      "profile": { "kind": "game-asset", "category": "building", "archetype": "two-story urban townhouse", "style": "stylized", "usage": "modular", "target": "godot", "unit": "m" },
+      "requiredPhases": ["blockout", "structure", "details", "validation"],
+      "acceptance": ["human-scale entrance", "readable two-floor structure", "modular facade divisions"]
+    },
+    {
+      "id": "building-clock-tower",
+      "profile": { "kind": "game-asset", "category": "building", "archetype": "civic clock tower", "style": "low-poly", "usage": "modular", "target": "godot", "unit": "m" },
+      "requiredPhases": ["silhouette", "structure", "details", "validation"],
+      "acceptance": ["landmark silhouette", "clock faces on primary elevations", "supported roof mass"]
+    },
+    {
+      "id": "building-harbor-warehouse",
+      "profile": { "kind": "game-asset", "category": "building", "archetype": "industrial harbor warehouse", "style": "low-poly", "usage": "modular", "target": "godot", "unit": "m" },
+      "requiredPhases": ["blockout", "structure", "details", "collision", "validation"],
+      "acceptance": ["vehicle-scale loading doors", "repeated structural bays", "simple collision intent"]
+    },
+    {
+      "id": "building-fantasy-temple",
+      "profile": { "kind": "game-asset", "category": "building", "archetype": "fantasy mountain temple", "style": "stylized", "usage": "modular", "target": "godot", "unit": "m" },
+      "requiredPhases": ["silhouette", "structure", "details", "materials", "validation"],
+      "acceptance": ["ceremonial approach", "layered roof silhouette", "repeatable column module"]
+    },
+    {
+      "id": "vehicle-utility-rover",
+      "profile": { "kind": "game-asset", "category": "vehicle", "archetype": "six-wheel utility rover", "style": "stylized", "usage": "skeletal", "target": "godot", "unit": "m" },
+      "requiredPhases": ["silhouette", "structure", "assembly", "validation"],
+      "acceptance": ["occupant-scale cabin", "six grounded wheels", "semantic wheel hierarchy"]
+    },
+    {
+      "id": "prop-treasure-chest",
+      "profile": { "kind": "game-asset", "category": "prop", "archetype": "reinforced treasure chest", "style": "stylized", "usage": "skeletal", "target": "godot", "unit": "m" },
+      "requiredPhases": ["silhouette", "structure", "details", "validation"],
+      "acceptance": ["readable lid seam", "hinge hierarchy", "interaction-scale proportions"]
+    },
+    {
+      "id": "vegetation-pine-cluster",
+      "profile": { "kind": "game-asset", "category": "vegetation", "archetype": "mountain pine cluster", "style": "low-poly", "usage": "static", "target": "godot", "unit": "m" },
+      "requiredPhases": ["silhouette", "structure", "lod", "validation"],
+      "acceptance": ["distinct tree silhouettes", "grounded roots", "readable reduced-detail representation"]
+    },
+    {
+      "id": "terrain-cliff-module",
+      "profile": { "kind": "game-asset", "category": "terrain", "archetype": "modular coastal cliff", "style": "stylized", "usage": "environment", "target": "godot", "unit": "m" },
+      "requiredPhases": ["blockout", "structure", "collision", "lod", "validation"],
+      "acceptance": ["tileable side boundaries", "readable walkable top", "simple collision intent"]
+    },
+    {
+      "id": "environment-market-square",
+      "profile": { "kind": "game-asset", "category": "environment", "archetype": "small fantasy market square kit", "style": "stylized", "usage": "environment", "target": "godot", "unit": "m" },
+      "requiredPhases": ["reference", "blockout", "structure", "assembly", "validation"],
+      "acceptance": ["clear player circulation", "reusable stall modules", "consistent shared scale"]
+    }
+  ]
+}

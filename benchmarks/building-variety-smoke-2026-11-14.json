@@ -1,0 +1,21 @@
+{
+  "schema": "dsh-illusion/building-variety-smoke@1",
+  "date": "2026-11-14",
+  "harness": "0.2.2-rc.1",
+  "model": "DeepSeek-V4.1-Flash",
+  "reasoningEffort": "high",
+  "durationSeconds": 110,
+  "results": [
+    { "archetype": "civic clock tower", "style": "low-poly", "structureParts": 19, "finalParts": 20, "envelopeMeters": [10.4, 10.4, 26.8], "steps": 4, "status": "complete" },
+    { "archetype": "industrial harbor warehouse", "style": "low-poly", "structureParts": 19, "finalParts": 20, "envelopeMeters": [32, 15, 11.65], "steps": 4, "status": "complete" },
+    { "archetype": "fantasy mountain temple", "style": "stylized", "structureParts": 19, "finalParts": 20, "envelopeMeters": [22, 16, 13.97], "steps": 4, "status": "complete" }
+  ],
+  "historyCards": 12,
+  "notObservable": [
+    "pivots and modular snap sockets",
+    "UVs, texel density, texture atlases, and lightmap UV2",
+    "triangle and draw-call budgets, LOD chains, and imposters",
+    "collision, occlusion, and navigation meshes",
+    "Godot import and runtime acceptance"
+  ]
+}
